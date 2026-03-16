@@ -13,6 +13,7 @@ while Validation:
             print("The product name must contain only letters. Please try again.")
         else:
             Costo_total = price * quantity
+            print("----------TOTAL----------")
             print("The total cost of the product is: ", Costo_total)
             print ("The product is: ", product)
             print ("The price is: ", price)
@@ -21,4 +22,4 @@ while Validation:
             
             validation = False
     except ValueError: 
-        print("invalid input, please enter name, price or quantity")
+        print("invalid input, please enter number of price or quantity")
