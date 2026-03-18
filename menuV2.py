@@ -49,8 +49,8 @@ while is_running:
             
         elif option == 3:
             if not inventario:
-                print ("No products to caculate")
-            else: 
+                print ("No products to caculate")   
+            else:   
                 total = 0 
                 print("----------TOTAL----------")
                 print()
