@@ -45,11 +45,7 @@ while is_running:
                 print ("No products to caculate")
             else:
                 calculate_statistics(inventario)
-               
-             
                 
-           
-            
              
         elif option == 4:
             print("Goodbye!")
