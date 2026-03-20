@@ -1,9 +1,9 @@
 
-def registro_de_product(inventario, product, price, quantity):
+def register_of_product(inventory, product, price, quantity):
      sale = {
                  "product": product,
                  "price": price,
                  "quantity": quantity
                  }
-     inventario.append(sale)
+     inventory.append(sale)
      print(f"Product added successfully!")

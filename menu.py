@@ -1,8 +1,8 @@
-from registro_de_product import registro_de_product
+from register_of_product import register_of_product
 from show_inventory import show_inventory
 from calculate import calculate_statistics
 
-inventario = []
+inventory = []
 
 print("Welcome The inventory")
 
@@ -29,22 +29,22 @@ while is_running:
                 print("The product name must contain only letters. Please try again.")
             
             elif product.strip():  # Verifica que no esté vacío
-               registro_de_product(inventario,product, price, quantity)
+               register_of_product(inventory,product, price, quantity)
                 
         elif option == 2:
-            if not inventario:
+            if not inventory:
                 print ("Inventory is empty ")
             else:
-                show_inventory(inventario)
+                show_inventory(inventory)
                 
                
             
             
         elif option == 3:
-            if not inventario:
+            if not inventory:
                 print ("No products to caculate")
             else:
-                calculate_statistics(inventario)
+                calculate_statistics(inventory)
                 
              
         elif option == 4:

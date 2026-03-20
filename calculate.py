@@ -1,9 +1,9 @@
-def calculate_statistics(inventario):
+def calculate_statistics(inventory):
      total = 0 
      print("----------TOTAL----------")
      print()
         
-     for item in inventario:
+     for item in inventory:
             costo = item["price"] * item ["quantity"]
             total += costo
             print ("The product is: ", item["product"])
