@@ -1,6 +1,4 @@
-from register_of_product import register_of_product
-from show_inventory import show_inventory
-from calculate import calculate_statistics
+from services import register_of_product, show_inventory, calculate_statistics, find_product, update_product, eliminate_prodcut
 
 inventory = []
 
@@ -11,8 +9,11 @@ is_running = True
 while is_running:
     print("\n1. Add product")
     print("\n2. Show Inventory")
-    print("\n3. calculate statistics")
-    print("\n4. Exit")
+    print("\n3. Find product")
+    print("\n4. update product")
+    print("\n5. Delete product")
+    print("\n6. calculate statistics")
+    print("\n7. Exit")
     
     try:
         option = int(input("Enter the option: "))
