@@ -36,7 +36,7 @@ while is_running:
         elif option == 4:
             product = valid_text("Enter product to update: ")
             price = valid_optional_float("New price (-1 to skip): ")
-            quantity = (input("New quantity (-1 to skip): "))
+            quantity = valid_optional_int("New quantity (-1 to skip): ")
             
             new_price = price if price >= 0 else None
             new_quantity = quantity if quantity >= 0 else None
