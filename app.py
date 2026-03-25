@@ -23,16 +23,8 @@ while is_running:
            
             product = valid_text("Enter the product name: ")
             price = valid_positive_float("Enter the product price: ")
-            quantity = int(input("Enter the product quantity: "))
-            
-            if price < 0 or quantity < 0:
-                print("The price and quantity must be non-negative.")
-                
-            elif not product.isalpha():
-                print("The product name must contain only letters.")
-            
-            elif product.strip():
-                register_of_product(inventory, product, price, quantity)
+            quantity = valid_positive_int("Enter the product quantity: ")
+            register_of_product(inventory, product, price, quantity)
                 
         elif option == 2:
             show_inventory(inventory)

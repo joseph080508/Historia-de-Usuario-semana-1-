@@ -24,4 +24,16 @@ def valid_positive_float(message):
 
 
 
+def valid_positive_int(message):
+    valid = False
+    while not valid:
+        try:
+            number = int(input(message))
+            if number >= 0:
+                valid = True
+            else:
+                print("Must be non-negative")
+        except ValueError:
+            print("Invalid number")
+    return number
 
