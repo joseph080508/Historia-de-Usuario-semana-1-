@@ -37,3 +37,17 @@ def valid_positive_int(message):
             print("Invalid number")
     return number
 
+
+def valid_optional_float(message):
+    valid = False
+    while not valid:
+        try:
+            number = float(input(message))
+            if number >= -1:
+                valid = True
+            else:
+                print("Invalid value")
+        except ValueError:
+            print("Invalid number")
+    return number
+

@@ -17,7 +17,7 @@ while is_running:
     print("7. Exit")
     
     try:
-        option = int(input("Enter the option: "))
+        option = valid_positive_int("Enter the option: ")
         
         if option == 1:
            
@@ -34,9 +34,9 @@ while is_running:
             find_product(inventory, product)
         
         elif option == 4:
-            product = input("Enter product to update: ")
-            price = float(input("New price (-1 to skip): "))
-            quantity = int(input("New quantity (-1 to skip): "))
+            product = valid_text("Enter product to update: ")
+            price = valid_optional_float("New price (-1 to skip): ")
+            quantity = (input("New quantity (-1 to skip): "))
             
             new_price = price if price >= 0 else None
             new_quantity = quantity if quantity >= 0 else None
@@ -44,7 +44,7 @@ while is_running:
             update_product(inventory, product, new_price, new_quantity)
             
         elif option == 5:
-            product = input("Enter product to delete: ")
+            product = valid_text("Enter product to delete: ")
             delete_product(inventory, product)
             
         elif option == 6:
