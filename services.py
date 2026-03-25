@@ -22,9 +22,9 @@ def show_inventory(inventory):
          
 
 
-def find_product(inventory, name):
+def find_product(inventory, product):
      for item in inventory:
-          if item["product"].lower() == name.lower():
+          if item["product"].lower() == product.lower():
                print("Product found: ")
                print("Product: ", item["product"])
                print("Price: ", item["price"])
@@ -35,9 +35,9 @@ def find_product(inventory, name):
  
  
     
-def update_product(inventory, name, new_price=None, new_quantity=None):
+def update_product(inventory, product, new_price=None, new_quantity=None):
      for item in inventory:
-          if item["product"].lower() == name.lower():
+          if item["product"].lower() == product.lower():
                if new_price is not None:
                     item["price"] = new_price
                if new_quantity is not None:
@@ -50,9 +50,9 @@ def update_product(inventory, name, new_price=None, new_quantity=None):
 
 
 
-def delete_prodcut(inventory, name):
+def delete_prodcut(inventory, product):
      for item in inventory:
-          if item ["product"].lower() == name.lower():
+          if item ["product"].lower() == product.lower():
                inventory.remove(item)
                print("product deleted successfully")
                return True

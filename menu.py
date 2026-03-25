@@ -1,4 +1,4 @@
-from services import register_of_product, show_inventory, calculate_statistics, find_product, update_product, eliminate_prodcut
+from services import *
 
 inventory = []
 
@@ -38,17 +38,25 @@ while is_running:
             else:
                 show_inventory(inventory)
                 
-               
-            
-            
         elif option == 3:
+            find_product(inventory, product)
+        
+        elif option == 4:
+            update_product(inventory, product, new_price=None, new_quantity=None)  
+            
+        elif option == 5:
+            delete_prodcut(inventory,product)
+            
+            
+            
+        elif option == 6:
             if not inventory:
                 print ("No products to caculate")
             else:
                 calculate_statistics(inventory)
                 
              
-        elif option == 4:
+        elif option == 7:
             print("Goodbye!")
             is_running = False
         else:
