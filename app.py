@@ -56,9 +56,12 @@ while is_running:
         elif option == 7:
             path = valid_text("Enter file name: ")
             save_csv(inventory, path)
+            
+        elif option == 8:
+            path = valid_text("Enter file name: ")
+            inventory = load_csv(path)
 
        
-        
         elif option == 9:
             print("Goodbye!")
             is_running = False
