@@ -15,7 +15,9 @@ while is_running:
     print("4. Update product")
     print("5. Delete product")
     print("6. Calculate statistics")
-    print("7. Exit")
+    print("7. Save CSV")
+    print("8. Load CSV")
+    print("9. Exit")
     
     try:
         option = valid_positive_int("Enter the option: ")
@@ -50,8 +52,14 @@ while is_running:
             
         elif option == 6:
             calculate_statistics(inventory)
-                
+            
         elif option == 7:
+            path = valid_text("Enter file name: ")
+            save_csv(inventory, path)
+
+       
+        
+        elif option == 9:
             print("Goodbye!")
             is_running = False
             
