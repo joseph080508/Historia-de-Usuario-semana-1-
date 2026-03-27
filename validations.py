@@ -1,4 +1,5 @@
 def valid_text(message):
+    #Valid the text
     valid = False
     while not valid:
         text = input(message)
@@ -9,6 +10,7 @@ def valid_text(message):
     return text
 
 def valid_positive_float(message):
+    #Valid the number is float and positive
     
     valid = False
     while not valid:
@@ -25,6 +27,7 @@ def valid_positive_float(message):
 
 
 def valid_positive_int(message):
+    #Valid the number is int and positive
     valid = False
     while not valid:
         try:
@@ -39,6 +42,7 @@ def valid_positive_int(message):
 
 
 def valid_optional_float(message):
+    #allow -1 or positive float
     valid = False
     while not valid:
         try:
@@ -52,6 +56,7 @@ def valid_optional_float(message):
     return number
 
 def valid_optional_int(message):
+    #allow -1 or positive int
     valid = False
     while not valid:
         try:
