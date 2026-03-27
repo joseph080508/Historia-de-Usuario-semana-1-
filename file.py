@@ -22,18 +22,34 @@ def save_csv(inventory, path):
   
 def load_csv(path):
     inventory = []
+    errors = 0 
 
     try:
         file = open(path, "r")
         reader = csv.reader(file)
 
         header = next(reader)
+        
+        # validar encabezado
+        if header != ["product", "price", "quantity"]:
+            print("Header is not correct")
+            return []
+
 
         for row in reader:
+               # validar columnas
+            if len(row) != 3:
+                errors += 1
+                continue
             try:
                 product = row[0]
                 price = float(row[1])
                 quantity = int(row[2])
+                
+                 # validar negativos
+                if price < 0 or quantity < 0:
+                    errors += 1
+                    continue
 
                 data = {
                     "product": product,
@@ -44,12 +60,17 @@ def load_csv(path):
                 inventory.append(data)
 
             except:
-                print("Error in row")
+                errors +=1
 
         file.close()
-        print("Loaded")
-
+        
+        print("Products loaded:", len(inventory))
+        print("Rows with error:", errors)
+        
         return inventory
+    
+    except FileNotFoundError:
+        print("File not found")
 
     except:
         print("Error loading file")

@@ -59,7 +59,31 @@ while is_running:
             
         elif option == 8:
             path = valid_text("Enter file name: ")
-            inventory = load_csv(path)
+            new_data= load_csv(path)
+            
+            if len(new_data) > 0:
+                choice = input("Overwrite inventory? (S/N): ")
+
+            if choice.lower() == "s":
+                inventory = new_data
+                print("Inventory replaced")
+            
+            else:
+                for new_item in new_data:
+                    exists = False
+
+                    for item in inventory:
+                        if item["product"].lower() == new_item["product"].lower():
+                            item["quantity"] += new_item["quantity"]
+                            item["price"] = new_item["price"]
+                            exists = True
+
+                    if not exists:
+                        inventory.append(new_item)
+
+                print("Inventory merged")
+
+            
 
        
         elif option == 9:
