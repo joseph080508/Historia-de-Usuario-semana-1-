@@ -1,4 +1,5 @@
 def register_of_product(inventory, product, price, quantity):
+    #Create product on the list
     sale = {
         "product": product,
         "price": price,
@@ -9,6 +10,7 @@ def register_of_product(inventory, product, price, quantity):
 
 
 def show_inventory(inventory):
+    #Show all products
     print("-------INVENTORY--------")
     
     for item in inventory:
@@ -19,6 +21,7 @@ def show_inventory(inventory):
 
 
 def find_product(inventory, product):
+    #search product
     for item in inventory:
         if item["product"].lower() == product.lower():
             print("Product found:")
@@ -32,6 +35,7 @@ def find_product(inventory, product):
 
 
 def update_product(inventory, product, new_price=None, new_quantity=None):
+    #update data
     for item in inventory:
         if item["product"].lower() == product.lower():
 
@@ -49,6 +53,7 @@ def update_product(inventory, product, new_price=None, new_quantity=None):
 
 
 def delete_product(inventory, product):
+    #delete product
     for item in inventory:
         if item["product"].lower() == product.lower():
             inventory.remove(item)
@@ -60,6 +65,7 @@ def delete_product(inventory, product):
 
 
 def calculate_statistics(inventory):
+    #calculate all products
     total = 0
     total_unit = 0
 
