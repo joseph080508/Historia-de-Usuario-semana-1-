@@ -8,7 +8,9 @@ print("Welcome The inventory")
 
 is_running = True
 
+
 while is_running:
+    #show menu
     print("\n1. Add product")
     print("2. Show Inventory")
     print("3. Find product")
@@ -21,22 +23,25 @@ while is_running:
     
     try:
         option = valid_positive_int("Enter the option: ")
-        
+       
         if option == 1:
-           
+            #add product 
             product = valid_text("Enter the product name: ")
             price = valid_positive_float("Enter the product price: ")
             quantity = valid_positive_int("Enter the product quantity: ")
             register_of_product(inventory, product, price, quantity)
                 
         elif option == 2:
+            #show inventory
             show_inventory(inventory)
                 
         elif option == 3:
+            #find product
             product = input("Enter product to find: ")
             find_product(inventory, product)
         
         elif option == 4:
+            #update product
             product = valid_text("Enter product to update: ")
             price = valid_optional_float("New price (-1 to skip): ")
             quantity = valid_optional_int("New quantity (-1 to skip): ")
@@ -47,17 +52,21 @@ while is_running:
             update_product(inventory, product, new_price, new_quantity)
             
         elif option == 5:
+            #delete product
             product = valid_text("Enter product to delete: ")
             delete_product(inventory, product)
             
         elif option == 6:
+            #calculate products 
             calculate_statistics(inventory)
             
         elif option == 7:
+            #save csv
             path = valid_text("Enter file name: ")
             save_csv(inventory, path)
             
         elif option == 8:
+            #load csv
             path = valid_text("Enter file name: ")
             new_data= load_csv(path)
             
@@ -67,7 +76,8 @@ while is_running:
             if choice.lower() == "s":
                 inventory = new_data
                 print("Inventory replaced")
-            
+                
+            #merge data
             else:
                 for new_item in new_data:
                     exists = False
@@ -87,6 +97,7 @@ while is_running:
 
        
         elif option == 9:
+            #Exit program
             print("Goodbye!")
             is_running = False
             
